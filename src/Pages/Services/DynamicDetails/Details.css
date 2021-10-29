@@ -10,10 +10,15 @@
   padding: 10px 0;
 }
 .image-section {
-  margin-top: 90px;
+  /* margin-top: 90px; */
 }
 .image-section img {
   width: 100%;
+}
+.place {
+  width: 60%;
+  margin: auto;
+  background-color: #0ebcd3;
 }
 .div {
   padding: 20px;

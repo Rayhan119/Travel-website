@@ -19,6 +19,9 @@ const Details = () => {
             <div className="image-section shadow p-3 mb-5 bg-body rounded">
               <img src={data.img} alt="" />
             </div>
+            <div className="place text-center shadow p-3 mb-5  rounded">
+              <h2>{data.name}</h2>
+            </div>
           </Col>
           <Col sm={6} md={6}>
             <div className="details-section shadow p-3 mb-5  rounded">
