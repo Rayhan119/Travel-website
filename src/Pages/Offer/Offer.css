@@ -1,0 +1,29 @@
+.offer-area {
+  background-image: linear-gradient(
+      rgba(250, 223, 70, 0.8),
+      rgba(250, 223, 70, 0.7)
+    ),
+    url("../../images/offer-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  color: white;
+}
+.offer-area h1 {
+  font-size: 60px;
+  padding: 10px 0;
+}
+.button {
+  padding-top: 20px;
+}
+.button button {
+  border: none;
+  padding: 8px 30px;
+  font-size: 22px;
+  transition: 0.5s;
+}
+.button button:hover {
+  background-color: maroon;
+  color: white;
+}

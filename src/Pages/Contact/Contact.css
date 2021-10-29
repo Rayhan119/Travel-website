@@ -1,0 +1,39 @@
+/* all header */
+.contact-header {
+  text-align: center;
+  font-weight: bold;
+  padding: 20px 0;
+  color: #13c5dd;
+}
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+}
+/* left part */
+.contact-form-left {
+  padding-top: 40px;
+}
+.contact-form-left input {
+  padding: 10px;
+}
+/* right image part */
+.contact-form-right img {
+  width: 100%;
+}
+/* form button */
+.form-btn {
+  text-align: center;
+  padding: 20px 0;
+}
+.form-btn button {
+  background: #0ebcd3;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.form-btn button:hover {
+  background: black;
+  color: white;
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "img": "https://i.ibb.co/YpQSRPd/Moscow.jpg",
+    "name": "Tours in Moscow",
+    "description": "Hit up many of Moscow’s top attractions all in two days during this private tour where your guide meets you right in your hotel lobby with a personalized itinerary. Along with visiting Kolomenskoye Museum and Reserve or Tsaritsino Park.",
+    "price": 2100
+  },
+  {
+    "img": "https://i.ibb.co/hY1xKpS/New-York.jpg",
+    "name": "Tours in New York",
+    "description": "Make the most of your time in the city that never sleeps on a guided tour of NYC’s top attractions. Travel by both boat (seasonal) and bus as you swing by the 9/11 Memorial, Central Park, Rockefeller Center and more. ",
+    "price": 1700
+  },
+  {
+    "img": "https://i.ibb.co/zZjQxVD/Paris.jpg",
+    "name": "Tour in Paris",
+    "description": "Ensure a memorable night out in Paris with a gourmet dinner cruise along the Seine River. Float past the city’s famed monuments, such as the Eiffel Tower, Louvre Museum, and Ile de la Cité aboard a luxury Bateaux Parisiens riverboat.",
+    "price": 2000
+  },
+  {
+    "img": "https://i.ibb.co/QdHZZ2H/piramid.jpg",
+    "name": "Tour in Egypt",
+    "description": "starts At 8:00 am with Pickup from your hotel in either Cairo or Giza By Emo Tours guide to Start your Giza Full Day Tour Visiting Giza Pyramids where you Visit the Great Pyramids Of Giza - Cheops ,Chephren & Mykerinos  Also it`s the same place where you Can have a close-up look at the Sphinx ",
+    "price": 1800
+  },
+  {
+    "img": "https://i.ibb.co/9pvhyYN/rome.jpg",
+    "name": "Tour in Rome",
+    "description": "Discover the Vatican on a tour of Sistine Chapel, and the Vatican Museums. Navigate the vast complex of rooms, artwork, and history with a guide, who brings the ancient collection to life. Skip all the entrance lines to explore halls such as the Gallery of the Maps and Raphael’s Rooms.",
+    "price": 2200
+  },
+  {
+    "img": "https://i.ibb.co/xsh5jDL/seoul-attractions.jpg",
+    "name": "Tour in Seoul",
+    "description": "Tour the Korean Demilitarized Zone (DMZ) with a knowledgeable guide who shares the history and highlights of this important strip of land that separates North and South Korea. Established in 1953 after the Korean War, the DMZ includes key sites such as the Freedom Bridge.",
+    "price": 1500
+  }
+]

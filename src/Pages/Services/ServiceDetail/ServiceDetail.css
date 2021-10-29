@@ -1,0 +1,28 @@
+.service-detail-btn {
+  text-align: center;
+  padding: 20px 0;
+}
+.service-detail-btn button {
+  background: #0ebcd3;
+  padding: 8px 30px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.service-detail-btn button:hover {
+  background: black;
+  color: white;
+}
+.service-detail h3 {
+  color: #0ebcd3;
+  text-align: center;
+  padding: 10px 0;
+}
+.service-detail p {
+  color: rgb(156, 151, 151);
+  line-height: 1.5em;
+}
+.service-detail span {
+  color: maroon;
+  font-size: 23px;
+}

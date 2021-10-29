@@ -1,0 +1,66 @@
+.header-top-info {
+  padding: 5px 0;
+  background-color: #faf9f9;
+}
+.font-icon {
+  color: maroon;
+  margin-right: 10px;
+}
+.header-top span {
+  margin: 0 30px;
+  color: gray;
+  font-weight: bold;
+}
+.header-top .header-icon i {
+  padding: 0 15px;
+  color: rgb(218, 79, 25);
+  font-size: 20px;
+  transition: 0.7s;
+}
+.header-top .header-icon i:hover {
+  color: blue;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.nav-link-style a {
+  text-decoration: none;
+  margin: 0 20px;
+  color: black;
+}
+.nav-link-style a:hover {
+  color: maroon;
+}
+.nav-link-right a {
+  text-decoration: none;
+  margin: 0 5px;
+  background: maroon;
+  padding: 5px 12px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.nav-link-right a:hover {
+  background: black;
+  color: white;
+}
+.nav-area span {
+  color: maroon;
+  font-size: 30px;
+  font-weight: bold;
+}
+.logo-style {
+  text-shadow: 2px 2px 4px rgb(77, 73, 73);
+}
+.user-info {
+  display: flex;
+  padding: 15px;
+}
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

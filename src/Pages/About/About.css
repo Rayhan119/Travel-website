@@ -1,0 +1,41 @@
+/* about section */
+
+.about-section {
+  padding: 40px 0;
+}
+.about-section h1 {
+  text-align: center;
+  padding-bottom: 50px;
+  color: #0ebcd3;
+  letter-spacing: 2px;
+}
+.about-section img {
+  width: 100%;
+}
+.about-section p {
+  line-height: 1.5em;
+  padding-top: 20px;
+}
+.about-section h2 {
+  color: maroon;
+}
+/* button sectiion */
+.about-btn {
+  text-align: center;
+  padding: 20px 0;
+}
+.about-btn button {
+  background: #0ebcd3;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.about-btn button:hover {
+  background: black;
+  color: white;
+}
+.about-img-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
