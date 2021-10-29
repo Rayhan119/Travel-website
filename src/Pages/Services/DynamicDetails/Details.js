@@ -1,70 +1,64 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Container, Form, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useParams } from "react-router";
 import "./Details.css";
 const Details = () => {
   const { id } = useParams();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
+
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch(`http://localhost:5000/services/${id}`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
-  const exactItem = data.filter((td) => td.id == id);
-  console.log(exactItem);
-  <h3>Name : {exactItem[0]?.name}</h3>;
   return (
     <div>
-      <Container>
-        <div className="details-heas text-center">
-          <h1>Welcome To proced this service...</h1>
-          <p className="text-danger fs-3">Hope you will get best treatment..</p>
-        </div>
-        <Row className="details">
-          <Card
-            className="shadow p-3 mb-5 bg-body rounded text-center details-cart"
-            style={{ width: "18rem" }}
-          >
-            <Card.Img variant="top" height="250px" src={exactItem[0]?.img} />
-            <Card.Body>
-              <Card.Title className="text-danger">
-                {exactItem[0]?.name}
-              </Card.Title>
-              <Card.Text>
-                <p>{exactItem[0]?.description}</p>
-              </Card.Text>
-              <Card.Text>
-                <p>Price :{exactItem[0]?.price}</p>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Row>
-        <div className="form-area">
-          <Form>
-            <Row className="mb-3">
-              <Form.Group controlId="formGridEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-              </Form.Group>
-
-              <Form.Group controlId="formGridPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-              </Form.Group>
-            </Row>
-
-            <Form.Group className="mb-3" controlId="formGridAddress1">
-              <Form.Label>Address</Form.Label>
-              <Form.Control placeholder="Address" />
-            </Form.Group>
-
-            <div className="form-sub-btn">
-              <Button variant="primary" type="submit">
-                Proceed service
-              </Button>
+      <Container className="service-details-section">
+        <Row>
+          <Col sm={6} md={6}>
+            <div className="image-section shadow p-3 mb-5 bg-body rounded">
+              <img src={data.img} alt="" />
             </div>
-          </Form>
-        </div>
+          </Col>
+          <Col sm={6} md={6}>
+            <div className="details-section shadow p-3 mb-5  rounded">
+              <h1>Package Overview</h1>
+              <div className="div">
+                <h3>
+                  {" "}
+                  Place Name : <span>{data.name}</span>
+                </h3>
+                <h3>
+                  {" "}
+                  Place Decription: <span> {data.description}</span>
+                </h3>
+                <h3>
+                  {" "}
+                  Duration : <span>7days</span>
+                </h3>
+                <h3>
+                  {" "}
+                  Vehicles : <span>Airbus A340</span>
+                </h3>
+                <h3>
+                  {" "}
+                  Price : <span>{data.price}$</span>{" "}
+                </h3>
+                <div className="form-sub-btn">
+                  <Button variant="primary" type="submit">
+                    Book service
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Col>
+        </Row>
+
+        {/* <div className="form-sub-btn">
+              <Button variant="primary" type="submit">
+                Book service
+              </Button>
+            </div> */}
       </Container>
     </div>
   );

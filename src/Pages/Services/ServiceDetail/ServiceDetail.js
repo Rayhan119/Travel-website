@@ -3,7 +3,7 @@ import { Button, Container, Row } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import "./ServiceDetail.css";
 const ServiceDetail = (props) => {
-  const { id, name, description, img, price } = props.service;
+  const { _id, name, description, img, price } = props.service;
 
   return (
     <div>
@@ -17,9 +17,9 @@ const ServiceDetail = (props) => {
               <span>Price</span> : {price}$
             </h5>
 
-            <NavLink to={`/details/${id}`}>
+            <NavLink to={`/services/${_id}`}>
               <div className="service-detail-btn">
-                <Button>Book Now</Button>
+                <Button>View Details</Button>
               </div>
             </NavLink>
           </div>
