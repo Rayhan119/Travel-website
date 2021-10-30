@@ -9,6 +9,7 @@ import Contact from "./Pages/Contact/Contact";
 
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
+import Booking from "./Pages/MyBooking/Booking";
 import NotFound from "./Pages/NotFound/NotFound";
 import Details from "./Pages/Services/DynamicDetails/Details";
 import Services from "./Pages/Services/Services";
@@ -41,6 +42,9 @@ function App() {
             <PrivateRoute path="/services">
               <Services></Services>
             </PrivateRoute>
+            <Route path="/book">
+              <Booking></Booking>
+            </Route>
             <Route path="/login">
               <Login></Login>
             </Route>

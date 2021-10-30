@@ -4,6 +4,7 @@ import useAuth from "../../Hooks/useAuth";
 import "./Login.css";
 import googleImg from "../../images/Google__G__Logo.svg.png";
 import { NavLink, useLocation, useHistory } from "react-router-dom";
+import { useSSRSafeId } from "@react-aria/ssr";
 const Login = () => {
   const history = useHistory();
   const location = useLocation();
@@ -17,6 +18,7 @@ const Login = () => {
     getEmail,
     getPassword,
   } = useAuth();
+
   return (
     <div className="login-section">
       <Container>
@@ -24,18 +26,7 @@ const Login = () => {
           <div className="main-form-section shadow p-3 mb-5 bg-body rounded">
             <h1>Please Login</h1>
             <div className="login-form-section">
-              <Form
-                onSubmit={() => {
-                  signInEmailPassword()
-                    .then((result) => {
-                      setUsers(result.user);
-                      history.push(redirect);
-                    })
-                    .catch((error) => {
-                      setError(error.messege);
-                    });
-                }}
-              >
+              <Form onSubmit={signInEmailPassword}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control
                     onBlur={getEmail}

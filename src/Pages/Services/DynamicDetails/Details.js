@@ -1,8 +1,30 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
-import { useParams } from "react-router";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { useHistory, useLocation, useParams } from "react-router";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import "./Details.css";
 const Details = () => {
+  //redirect
+  const history = useHistory();
+  const location = useLocation();
+  const redirect = "/home";
+  //react form
+  const { register, handleSubmit, reset } = useForm();
+  //user axios
+  const onSubmit = (data) => {
+    console.log(data);
+    axios.post("http://localhost:5000/users", data).then((res) => {
+      if (res.data.insertedId) {
+        Swal.fire("Good job!", "You Successfully Booked your Place", "success");
+
+        history.push(redirect);
+        reset();
+      }
+    });
+  };
   const { id } = useParams();
   const [data, setData] = useState({});
 
@@ -16,15 +38,15 @@ const Details = () => {
       <Container className="service-details-section">
         <Row>
           <Col sm={6} md={6}>
-            <div className="image-section shadow p-3 mb-5 bg-body rounded">
-              <img src={data.img} alt="" />
-            </div>
-            <div className="place text-center shadow p-3 mb-5  rounded">
-              <h2>{data.name}</h2>
-            </div>
-          </Col>
-          <Col sm={6} md={6}>
+            {/* page overview */}
             <div className="details-section shadow p-3 mb-5  rounded">
+              <div className="image-section ">
+                <img src={data.img} alt="" />
+              </div>
+              <div className=" text-center text-success">
+                <h2>{data.name}</h2>
+              </div>
+              {/* overview */}
               <h1>Package Overview</h1>
               <div className="div">
                 <h3>
@@ -47,24 +69,38 @@ const Details = () => {
                   {" "}
                   Price : <span>{data.price}$</span>{" "}
                 </h3>
-                <div className="form-sub-btn">
-                  <Button variant="primary" type="submit">
-                    Book service
-                  </Button>
-                </div>
               </div>
             </div>
           </Col>
-        </Row>
+          <Col sm={6} md={6}>
+            <div className="booking-form shadow p-5 mb-5  rounded">
+              <h2>Booking Please!!</h2>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <input
+                  placeholder="Name"
+                  {...register("name", { required: true, maxLength: 20 })}
+                />
+                <input placeholder="Phone" {...register("phone")} />
+                <input placeholder="Email" {...register("email")} />
+                <input placeholder="Address" {...register("address")} />
 
-        {/* <div className="form-sub-btn">
-              <Button variant="primary" type="submit">
-                Book service
-              </Button>
-            </div> */}
+                <div className="form-sub-button">
+                  <input type="submit" value="Booking" />
+                </div>
+              </form>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </div>
   );
 };
 
 export default Details;
+{
+  /* <Link to="/book">
+  <div className="form-btn">
+    <Button>Booking </Button>
+  </div>
+</Link>; */
+}

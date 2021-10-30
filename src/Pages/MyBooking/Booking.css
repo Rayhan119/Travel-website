@@ -1,0 +1,40 @@
+.booking-header {
+  text-align: center;
+  padding: 30px 0;
+  color: #0ebcd3;
+  font-size: 40px;
+  letter-spacing: 3px;
+}
+.user-info {
+  width: 50%;
+  margin: auto;
+  text-align: justify;
+}
+
+.user-info {
+  padding: 20px;
+}
+.user-info h3 {
+  color: maroon;
+}
+.user-info span {
+  color: gray;
+  font-size: 20px;
+  font-weight: bold;
+}
+.book-delete-btn {
+  text-align: center;
+  padding: 20px 0;
+}
+.book-delete-btn button {
+  background: maroon;
+  padding: 8px 30px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.book-delete-btn button:hover {
+  background: black;
+  color: white;
+}

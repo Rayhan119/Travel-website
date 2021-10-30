@@ -25,9 +25,13 @@
   height: 80px;
   border-radius: 50%;
 }
+.nav-area {
+  width: 90%;
+  margin: auto;
+}
 .nav-link-style a {
   text-decoration: none;
-  margin: 0 20px;
+  margin: 0 15px;
   color: black;
 }
 .nav-link-style a:hover {

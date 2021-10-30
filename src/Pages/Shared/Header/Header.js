@@ -36,44 +36,46 @@ const Header = () => {
       </div>
       <div className="nav-area ">
         <Navbar expand="lg">
-          <Container>
-            <Navbar.Brand to="/home">
-              <img src={logo} alt="logo" className="logo" />
-              <span className="logo-style">Travelerz</span>
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="m-auto text-uppercase nav-link-style">
-                <NavLink to="/home">Home</NavLink>
-                <NavLink to="/about">About us</NavLink>
-                <NavLink to="/services">Services</NavLink>
-                <NavLink to="/contact">contact us</NavLink>
-              </Nav>
-            </Navbar.Collapse>
-            <Navbar.Collapse className="justify-content-end text-uppercase">
-              <Nav className="nav-link-right">
-                {users?.email ? (
+          <Navbar.Brand to="/home">
+            <img src={logo} alt="logo" className="logo" />
+            <span className="logo-style">Travelerz</span>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="m-auto text-uppercase nav-link-style">
+              <NavLink to="/home">Home</NavLink>
+              <NavLink to="/about">About us</NavLink>
+              <NavLink to="/services">Services</NavLink>
+              <NavLink to="/contact">contact us</NavLink>
+            </Nav>
+          </Navbar.Collapse>
+          <Navbar.Collapse className="justify-content-end text-uppercase">
+            <Nav className="nav-link-right">
+              {users?.email ? (
+                <>
+                  <NavLink to="/book">My Booking</NavLink>
+
                   <NavLink onClick={handleGoogleSignOut} to="/login">
                     Logout
                   </NavLink>
-                ) : (
-                  <>
-                    <NavLink to="/signup">Signup</NavLink>
-                    <NavLink to="/login">Login</NavLink>
-                  </>
-                )}
-              </Nav>
-
-              {users.email ? (
-                <div className="user-info">
-                  <img src={users.photoURL} alt="" />
-                  <p>{users.displayName}</p>
-                </div>
+                </>
               ) : (
-                <></>
+                <>
+                  <NavLink to="/signup">Signup</NavLink>
+                  <NavLink to="/login">Login</NavLink>
+                </>
               )}
-            </Navbar.Collapse>
-          </Container>
+            </Nav>
+
+            {users.email ? (
+              <div className="user-info">
+                <img src={users.photoURL} alt="" />
+                <p>{users.displayName}</p>
+              </div>
+            ) : (
+              <></>
+            )}
+          </Navbar.Collapse>
         </Navbar>
       </div>
     </div>
