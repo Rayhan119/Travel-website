@@ -13,14 +13,20 @@ const AddServices = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/services", data).then((res) => {
-      if (res.data.insertedId) {
-        Swal.fire("Good job!", "You Successfully added the service", "success");
+    axios
+      .post("https://macabre-vampire-16752.herokuapp.com/services", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire(
+            "Good job!",
+            "You Successfully added the service",
+            "success"
+          );
 
-        history.push(redirect);
-        reset();
-      }
-    });
+          history.push(redirect);
+          reset();
+        }
+      });
   };
   return (
     <div>

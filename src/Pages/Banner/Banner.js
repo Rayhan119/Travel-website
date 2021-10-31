@@ -25,7 +25,7 @@ const Banner = () => {
                 <Button>Read more</Button>
               </div>
             </Col>
-            <Col xs={6} md={7}></Col>
+            <Col xs={0} md={7}></Col>
           </Row>
         </Container>
       </div>

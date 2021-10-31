@@ -82,3 +82,10 @@
 .btn-primary:hover {
   background-color: black;
 }
+/* //media query */
+@media only screen and (max-width: 600px) {
+  .nav-area {
+    width: 95%;
+    margin: auto;
+  }
+}

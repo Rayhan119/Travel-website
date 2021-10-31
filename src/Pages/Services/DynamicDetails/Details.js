@@ -24,7 +24,10 @@ const Details = () => {
   const onSubmit = (data) => {
     console.log({ ...data, ...rest });
     axios
-      .post("http://localhost:5000/users", { ...data, ...rest })
+      .post("https://macabre-vampire-16752.herokuapp.com/users", {
+        ...data,
+        ...rest,
+      })
 
       .then((res) => {
         if (res.data.insertedId) {
@@ -41,7 +44,7 @@ const Details = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`https://macabre-vampire-16752.herokuapp.com/services/${id}`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);

@@ -4,7 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 const Booking = () => {
   const [booking, setBooking] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://macabre-vampire-16752.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => setBooking(data));
   }, []);
@@ -12,7 +12,7 @@ const Booking = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You sure want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/users/${id}`;
+      const url = `https://macabre-vampire-16752.herokuapp.com/users/${id}`;
       fetch(url, {
         method: "DELETE",
       })

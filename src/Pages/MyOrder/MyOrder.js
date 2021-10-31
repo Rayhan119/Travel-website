@@ -9,14 +9,14 @@ const MyOrder = () => {
   const { users } = useAuth();
   const email = users.email;
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${email}`)
+    fetch(`https://macabre-vampire-16752.herokuapp.com/users/${email}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, []);
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You sure want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/users/${id}`;
+      const url = `https://macabre-vampire-16752.herokuapp.com/users/${id}`;
       fetch(url, {
         method: "DELETE",
       })
