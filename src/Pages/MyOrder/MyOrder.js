@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from "react";
-import "./Booking.css";
+import React from "react";
+import "./MyOrder.css";
 import { Col, Container, Row } from "react-bootstrap";
-const Booking = () => {
-  const [booking, setBooking] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/users")
-      .then((res) => res.json())
-      .then((data) => setBooking(data));
-  }, []);
+import { useEffect, useState } from "react";
+import useAuth from "../../../src/Hooks/useAuth";
 
+const MyOrder = () => {
+  const [order, setOrder] = useState([]);
+  const { users } = useAuth();
+  const email = users.email;
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${email}`)
+      .then((res) => res.json())
+      .then((data) => setOrder(data));
+  }, []);
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You sure want to delete?");
     if (proceed) {
@@ -19,55 +23,55 @@ const Booking = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount) {
-            const remaining = booking.filter(
-              (bookingInfo) => bookingInfo._id !== id
+            const remaining = order.filter(
+              (singleOrderInfo) => singleOrderInfo._id !== id
             );
-            setBooking(remaining);
+            setOrder(remaining);
           }
         });
     }
   };
+
   return (
     <div>
-      <h2 className="booking-header">Booking Infromation</h2>
-      {booking.map((singleBooking) => (
-        <div key={singleBooking._id}>
-          <div className="order-info shadow-lg p-3 mb-5 bg-body rounded">
+      {order.map((singleOrder) => (
+        <div key={singleOrder._id}>
+          <div className="single-order shadow-lg p-3 mb-5 bg-body rounded">
             <Container>
               <Row>
                 <Col md={6}>
-                  <div className="order-info-img">
-                    <img src={singleBooking.img} alt="" />
+                  <div className="single-order-img">
+                    <img src={singleOrder.img} alt="" />
                   </div>
 
                   <h3>
-                    Description : <span>{singleBooking.description}</span>{" "}
+                    Description : <span>{singleOrder.description}</span>{" "}
                   </h3>
                   <h3>
-                    Price : <span>{singleBooking.price}</span>{" "}
+                    Price : <span>{singleOrder.price}</span>{" "}
                   </h3>
                 </Col>
                 <Col md={6}>
                   <h3>
                     {" "}
-                    Order ID : <span>{singleBooking._id}</span>
+                    Order ID : <span>{singleOrder._id}</span>
                   </h3>
                   <h3>
                     {" "}
-                    Email: <span> {singleBooking.email}</span>
+                    Email: <span> {singleOrder.email}</span>
                   </h3>
                   <h3>
                     {" "}
-                    Phone: <span> {singleBooking.phone}</span>
+                    Phone: <span> {singleOrder.phone}</span>
                   </h3>
                   <h3>
                     {" "}
-                    Address: <span> {singleBooking.address}</span>
+                    Address: <span> {singleOrder.address}</span>
                   </h3>
-                  <div className="book-delete-btn">
+                  <div className="single-order-delete-btn">
                     <button
                       onClick={() => {
-                        handleDelete(singleBooking._id);
+                        handleDelete(singleOrder._id);
                       }}
                     >
                       delete
@@ -83,4 +87,4 @@ const Booking = () => {
   );
 };
 
-export default Booking;
+export default MyOrder;

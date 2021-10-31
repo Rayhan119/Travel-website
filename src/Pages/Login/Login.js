@@ -4,7 +4,7 @@ import useAuth from "../../Hooks/useAuth";
 import "./Login.css";
 import googleImg from "../../images/Google__G__Logo.svg.png";
 import { NavLink, useLocation, useHistory } from "react-router-dom";
-import { useSSRSafeId } from "@react-aria/ssr";
+
 const Login = () => {
   const history = useHistory();
   const location = useLocation();
@@ -18,7 +18,6 @@ const Login = () => {
     getEmail,
     getPassword,
   } = useAuth();
-
   return (
     <div className="login-section">
       <Container>

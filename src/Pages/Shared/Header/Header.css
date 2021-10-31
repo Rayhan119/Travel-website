@@ -26,7 +26,7 @@
   border-radius: 50%;
 }
 .nav-area {
-  width: 90%;
+  width: 80%;
   margin: auto;
 }
 .nav-link-style a {
@@ -39,17 +39,24 @@
 }
 .nav-link-right a {
   text-decoration: none;
+  color: maroon;
+}
+.nav-link-right a {
+  text-decoration: none;
   margin: 0 5px;
   background: maroon;
-  padding: 5px 12px;
+  padding: 3px 14px;
   color: white;
   border: none;
   border-radius: 5px;
   transition: 0.5s;
 }
-.nav-link-right a:hover {
+.nav-link-right .logout:hover {
   background: black;
   color: white;
+}
+.nav-link-right .dropdown-style {
+  background-color: maroon;
 }
 .nav-area span {
   color: maroon;
@@ -67,4 +74,11 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+.btn-primary {
+  background-color: maroon;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: black;
 }

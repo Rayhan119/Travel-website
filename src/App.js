@@ -5,11 +5,14 @@ import AuthProvider from "./Context/AuthProvider";
 //private route
 import PrivateRoute from "./Context/PrivateRoute/PrivateRoute";
 import About from "./Pages/About/About";
+import AddServices from "./Pages/AddServices/AddServices";
 import Contact from "./Pages/Contact/Contact";
 
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Booking from "./Pages/MyBooking/Booking";
+import MyOrder from "./Pages/MyOrder/MyOrder";
+
 import NotFound from "./Pages/NotFound/NotFound";
 import Details from "./Pages/Services/DynamicDetails/Details";
 import Services from "./Pages/Services/Services";
@@ -44,6 +47,12 @@ function App() {
             </PrivateRoute>
             <Route path="/book">
               <Booking></Booking>
+            </Route>
+            <Route path="/order">
+              <MyOrder></MyOrder>
+            </Route>
+            <Route path="/addServices">
+              <AddServices></AddServices>
             </Route>
             <Route path="/login">
               <Login></Login>

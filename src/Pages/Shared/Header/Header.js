@@ -1,5 +1,14 @@
 import React from "react";
-import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
+import {
+  Col,
+  Container,
+  Dropdown,
+  DropdownButton,
+  DropdownItem,
+  Nav,
+  Navbar,
+  Row,
+} from "react-bootstrap";
 import "./Header.css";
 import logo from "../../../images/Banner/taravel-log.jpg";
 import { NavLink } from "react-router-dom";
@@ -7,6 +16,7 @@ import useAuth from "../../../Hooks/useAuth";
 
 const Header = () => {
   const { users, handleGoogleSignOut } = useAuth();
+
   return (
     <div>
       <div className="header-top-info shadow-sm p-3 ">
@@ -49,13 +59,31 @@ const Header = () => {
               <NavLink to="/contact">contact us</NavLink>
             </Nav>
           </Navbar.Collapse>
-          <Navbar.Collapse className="justify-content-end text-uppercase">
+          <Navbar.Collapse className=" text-uppercase">
             <Nav className="nav-link-right">
               {users?.email ? (
                 <>
-                  <NavLink to="/book">My Booking</NavLink>
+                  <Dropdown>
+                    <Dropdown.Toggle>Dashboard</Dropdown.Toggle>
 
-                  <NavLink onClick={handleGoogleSignOut} to="/login">
+                    <Dropdown.Menu>
+                      <Dropdown.Item to="/book">
+                        <NavLink to="/book">Manage Booking</NavLink>
+                      </Dropdown.Item>
+                      <Dropdown.Item to="/addServices">
+                        <NavLink to="/addServices">Add Services</NavLink>
+                      </Dropdown.Item>
+                      <Dropdown.Item to="/order">
+                        <NavLink to="/order">My Order</NavLink>
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+
+                  <NavLink
+                    className="logout"
+                    onClick={handleGoogleSignOut}
+                    to="/login"
+                  >
                     Logout
                   </NavLink>
                 </>

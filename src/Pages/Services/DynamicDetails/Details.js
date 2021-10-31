@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useHistory, useLocation, useParams } from "react-router";
 import { Link } from "react-router-dom";
+
 import Swal from "sweetalert2";
+
 import "./Details.css";
 const Details = () => {
   //redirect
@@ -14,19 +16,29 @@ const Details = () => {
   //react form
   const { register, handleSubmit, reset } = useForm();
   //user axios
-  const onSubmit = (data) => {
-    console.log(data);
-    axios.post("http://localhost:5000/users", data).then((res) => {
-      if (res.data.insertedId) {
-        Swal.fire("Good job!", "You Successfully Booked your Place", "success");
-
-        history.push(redirect);
-        reset();
-      }
-    });
-  };
-  const { id } = useParams();
   const [data, setData] = useState({});
+
+  const { _id, ...rest } = data;
+
+  const { id } = useParams();
+  const onSubmit = (data) => {
+    console.log({ ...data, ...rest });
+    axios
+      .post("http://localhost:5000/users", { ...data, ...rest })
+
+      .then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire(
+            "Good job!",
+            "You Successfully Booked your Place",
+            "success"
+          );
+
+          history.push(redirect);
+          reset();
+        }
+      });
+  };
 
   useEffect(() => {
     fetch(`http://localhost:5000/services/${id}`)
@@ -81,7 +93,10 @@ const Details = () => {
                   {...register("name", { required: true, maxLength: 20 })}
                 />
                 <input placeholder="Phone" {...register("phone")} />
-                <input placeholder="Email" {...register("email")} />
+                <input
+                  placeholder="Please use login Email"
+                  {...register("email")}
+                />
                 <input placeholder="Address" {...register("address")} />
 
                 <div className="form-sub-button">
@@ -97,10 +112,3 @@ const Details = () => {
 };
 
 export default Details;
-{
-  /* <Link to="/book">
-  <div className="form-btn">
-    <Button>Booking </Button>
-  </div>
-</Link>; */
-}

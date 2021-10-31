@@ -1,35 +1,28 @@
-.booking-header {
-  text-align: center;
-  padding: 30px 0;
-  color: #0ebcd3;
-  font-size: 40px;
-  letter-spacing: 3px;
-}
-.order-info {
+.single-order {
   width: 80%;
   margin: auto;
   text-align: justify;
   padding: 40px;
 }
-.order-info-img img {
+.single-order-img img {
   width: 300px;
 }
-.order-info {
+.single-order {
   padding: 20px;
 }
-.order-info h3 {
+.single-order h3 {
   color: maroon;
 }
-.order-info span {
+.single-order span {
   color: gray;
   font-size: 20px;
   font-weight: bold;
 }
-.book-delete-btn {
+.single-order-delete-btn {
   text-align: center;
   padding: 20px 0;
 }
-.book-delete-btn button {
+.single-order-delete-btn button {
   background: maroon;
   padding: 8px 30px;
   border: none;
@@ -37,7 +30,7 @@
   border-radius: 5px;
   transition: 0.5s;
 }
-.book-delete-btn button:hover {
+.single-order-delete-btn button:hover {
   background: black;
   color: white;
 }

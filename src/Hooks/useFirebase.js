@@ -115,6 +115,7 @@ const useFirebase = () => {
     users,
     error,
     loading,
+    email,
   };
 };
 
