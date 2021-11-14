@@ -1,5 +1,5 @@
 <h1>Welcome to Travelerz</h1>
-<h1>Site link:</h1>
+<h1>Site link: https://travelerz-db451.web.app/</h1>
 <h2>About The site</h2>
 <ul>
     <li>It is a Travel related site</li>
@@ -15,5 +15,11 @@
     <li>Javascripts</li>
     <li>Bootstrap</li>
     <li>JSX,CSS,HTML</li>
-    <li>Firebase</li>
+</ul>
+<h2>Tools use</h2>
+<ul>
+    <li>Firebase for authentication</li>
+    <li>Firebase for Delpoyment</li>
+    <li>Heroku For server Deployment</li>
+    <li>vs code</li>
 </ul>

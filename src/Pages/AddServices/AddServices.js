@@ -3,7 +3,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useHistory, useLocation } from "react-router";
-import Swal from "sweetalert2";
+import Swal from "sweetalert";
 import "./AddServices.css";
 const AddServices = () => {
   const history = useHistory();
